@@ -99,41 +99,49 @@ class Content extends Component {
             this.setState({ contents: content })
         })
     }
-    
+
     render() {
         const { match: { params } } = this.props;
         return (
             <div className="content-1">
-                <div className="contentDetail">
-                    <div className="postButton">
-                        <button type="button" className="add"><Link className="nav" to={'/post/' + this.props.circleId + '/' + this.props.circleName + '/' + this.props.match.params.userId + '/' + localStorage.getItem('username')} >Add Post</Link></button>
-                    </div>
-                    <h1 className="content-header">{this.props.circleName}</h1>
-                    {this.state.contents.map(content =>
-                    <div className="content-2" key={content.id}>
-                            <div className="post-avatar"><p></p></div>
-                            <div className="post">
-                            <p>author: {content.author}</p>
-                            <p>"{content.text_post}"</p>
-                            <button>Edit</button>
-                            <button onClick={this.handleOpenModal}>Delete</button>
-                            <p>created at: {content.created_at}</p>
-                            </div>
-                        <ReactModal isOpen={this.state.showModal} style={customStyles}>
-                                <button className="modal" onClick={this.handleCloseModal}>X</button>
-                                <h3 className="delete-message">Are you sure you want delete this post?</h3>
-                                <div className="delete">
-                                    <button className="deleter" onClick={(e) => this.handleDelete(content.id)}>Yes</button>
-                                    <button className="deleter" onClick={this.handleDelete}>No</button>
-                                </div>
-                        </ReactModal>
-                    </div>
-                    )}
-                </div>
                 <React.Fragment>
                     Members: <Circle circleId={params.circleId} />
                 </React.Fragment>
-                
+                <div className="contentDetail">
+                    <h1 className="content-header">{this.props.circleName}'s Feed</h1>
+                    {this.state.contents.map(content =>
+                    <div className="content-2" key={content.id}>
+                        <canvas className="post"></canvas>
+                        <div className="post-2">
+                            <p className="posting">author: {content.author}</p>
+                            <p className="posting-2">"{content.text_post}"</p>
+                            <p className="posting">created at: {content.created_at}</p>
+                            <button className="editor" onClick={(e) => this.handleOpenEditModal(content.text_post, content.id)}>Edit</button>
+                            <ReactModal isOpen={this.state.showEditModal} style={customStyles}>
+                                    <button className="modal" onClick={(e) => this.handleCloseEditModal()}>X</button>
+                                    <h3 className="message">Edit Your Post: </h3>
+                                    <form>
+                                    <input type='text' defaultValue={this.state.post} onChange={(e) => this.setState({ post: e.target.value })} />
+                                    </form>
+                                    <div className="edit">
+                                        <button className="editing" onClick={(e) => this.handleEdit()}>Save</button>
+                                        <button className="editing" onClick={(e) => this.handleCloseEditModal()}>Do Not Save</button>
+                                    </div>
+                            </ReactModal>
+                            <button className="stuff" onClick={(e) => this.handleOpenDeleteModal(content.id)}>Delete</button>
+                            <ReactModal isOpen={this.state.showDeleteModal} style={customStyles}>
+                                    <button className="modal" onClick={(e) => this.handleCloseDeleteModal()}>X</button>
+                                    <h3 className="message">Are you sure you want to delete your post?</h3>
+                                    <div className="delete">
+                                        <button className="deleting" onClick={(e) => this.handleDelete()}>Yes</button>
+                                        <button className="deleting" onClick={(e) => this.handleCloseDeleteModal()}>No</button>
+                                    </div>
+                            </ReactModal>
+                        </div>
+                    </div>
+                    )}
+                </div>
+               
             </div>
         );
     }

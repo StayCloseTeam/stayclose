@@ -28,6 +28,7 @@ class NewContent extends Component {
             }
         }
         axios.post('/api/content/', {
+            author: 'placeholder',
             text_post: post_text,
             img_post: null,
             caption: "",

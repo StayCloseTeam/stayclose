@@ -230,21 +230,48 @@ button:hover {
     color: rgb(134, 134, 134); 
 }
 
-.post-avatar {
+canvas {
     background-image: url('https://www.logolynx.com/images/logolynx/03/039b004617d1ef43cf1769aae45d6ea2.png');
-    background-size: 120px 100px; 
+    background-size: cover; 
     background-repeat: no-repeat;
-    padding: 60px; 
-    margin-right: 15%; 
+    padding-right: 40px;
 }
 
-.delete-message {
+.message {
     margin-top: 10%;
     margin-bottom: 10%;
     color: #79BFC0; 
 }
 
+.edit {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .delete {
     display: flex;
     justify-content: space-evenly;
+}
+
+.post-2 {
+    padding: 30px 50px; 
+    width: 80%; 
+}
+
+.posting {
+    margin-bottom: 40px; 
+}
+
+.posting-2 {
+    margin-bottom: 40px; 
+    text-align: center;
+}
+
+.editor {
+    margin-right: 10px; 
+    margin-left: 80%; 
+}
+
+.content-header {
+    margin-bottom: 30px; 
 }
