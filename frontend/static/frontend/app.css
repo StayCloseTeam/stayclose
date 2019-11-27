@@ -21,7 +21,7 @@
 .header:hover {
     color: rgb(137, 236, 237); 
     font-size: 50pt; 
-    margin-right: 80%; 
+    /* margin-right: 80%;  */
     text-decoration: none;
 }
 
@@ -54,9 +54,10 @@ h2 {
     margin-right: 30px; 
 }
 
-.links {
+.links-2 {
     margin-top: 20px; 
     display: flex;
+    margin-left: 29%;
     justify-content: space-evenly;
 }
 
@@ -206,7 +207,7 @@ button:hover {
     text-decoration: none; 
 }
 
-.content {
+.content-1 {
     border-style: solid;
     border-color: #BCCACA;
     border-width: 5px; 
@@ -214,6 +215,36 @@ button:hover {
     padding: 4rem; 
 }
 
+.content-2 {
+    border-style: solid;
+    border-color: #BCCACA;
+    border-width: 5px; 
+    border-radius: 10px;
+    padding: 4rem; 
+    margin-bottom: 10px; 
+    display: flex; 
+    justify-content: flex-start;
+}
+
 .content-header {
     color: rgb(134, 134, 134); 
+}
+
+.post-avatar {
+    background-image: url('https://www.logolynx.com/images/logolynx/03/039b004617d1ef43cf1769aae45d6ea2.png');
+    background-size: 120px 100px; 
+    background-repeat: no-repeat;
+    padding: 60px; 
+    margin-right: 15%; 
+}
+
+.delete-message {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #79BFC0; 
+}
+
+.delete {
+    display: flex;
+    justify-content: space-evenly;
 }

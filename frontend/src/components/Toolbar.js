@@ -52,8 +52,8 @@ class Toolbar extends Component {
   render() {
     return (
       <div className="postButton">
-        <button type="button" className="add"><Link className="nav" to={'/post/' + this.props.circleId + '/' + this.props.circleName + '/' + localStorage.getItem('username')} >Add Post</Link></button>
-        <button type="button" className="delete" onClick={(e) => this.handleDelete()}>Delete Circle</button>
+        <button type="button" className="add-post"><Link className="nav" to={'/post/' + this.props.circleId + '/' + this.props.circleName + '/' + localStorage.getItem('username')} >Add Post</Link></button>
+        <button type="button" className="stuff" onClick={(e) => this.handleDelete()}>Delete Circle</button>
         <button type="button" className="addMember" onClick={this.handleOpenModal}>Add Member</button>
         <ReactModal isOpen={this.state.showModal} style={customStyles}>
             <button className="modal" onClick={this.handleCloseModal}>X</button>
