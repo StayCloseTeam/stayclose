@@ -14,6 +14,7 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     }
 };
+
 class Content extends Component {
     constructor(props) {
         super(props);
