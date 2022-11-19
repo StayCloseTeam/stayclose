@@ -26,9 +26,9 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "i": "^0.3.6",
     "react-inlinesvg": "^1.2.0",
-    "svg-inline-loader": "^0.8.0",
+    "svg-inline-loader": "^0.8.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
